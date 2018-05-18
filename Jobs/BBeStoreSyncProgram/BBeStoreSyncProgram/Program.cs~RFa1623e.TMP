@@ -1,0 +1,114 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net.Mail;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace BBeStoreSyncProgram
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            SmtpClient smtpClient1 = new SmtpClient("172.20.0.76");
+            MailMessage mail = new MailMessage("ic.chen@advantech.com.tw", "ic.chen@advantech.com.tw");
+
+            DataTable dt = GetDataTable("MY", "SELECT ORDER_NO FROM BB_ESTORE_ORDER WHERE ORDER_STATUS = 'UnProcess' ORDER BY CREATED_DATE");
+            if (dt != null && dt.Rows.Count > 0)
+            {
+                List<BBorderAPI.WebServiceResult> results = new List<BBorderAPI.WebServiceResult>();
+                foreach (DataRow dr in dt.Rows)
+                {
+                    BBorderAPI.WebServiceResult result = new BBorderAPI.WebServiceResult();
+                    BBorderAPI.BBorderAPI api = new BBorderAPI.BBorderAPI();
+                    api.Timeout = 60000;
+                    string no = dr["ORDER_NO"].ToString();
+                    result.OrderNo = no;
+                    try
+                    {
+                        result = api.Process(no);
+                        if (result.Result == false)
+                            ExecuteNonQuery("MY", String.Format("UPDATE BB_ESTORE_ORDER SET ORDER_STATUS = N'Failed', PROCESS_LOG = N'{0}', UPDATED_DATE = GETDATE() WHERE ORDER_NO = N'{1}'", result.Message, no));
+                        else
+                            ExecuteNonQuery("MY", String.Format("UPDATE BB_ESTORE_ORDER SET ORDER_STATUS = N'Success', UPDATED_DATE = GETDATE() WHERE ORDER_NO = N'{0}'", no));
+
+                        results.Add(result);
+                    }
+                    catch (Exception ex)
+                    {
+                        result.Result = false;
+                        result.Message = ex.ToString();
+                    }
+                }
+                if (results.Count > 0)
+                {
+                    GridView gv = new GridView();
+                    gv.DataSource = results.Select(p => new
+                    {
+                        OrderNo = p.OrderNo,
+                        Result = p.Result,
+                        Message = p.Message
+                    }).ToList();
+                    gv.DataBind();
+                    StringBuilder sb = new StringBuilder();
+                    System.IO.StringWriter sw = new System.IO.StringWriter(sb);
+                    HtmlTextWriter html = new HtmlTextWriter(sw);
+                    gv.RenderControl(html);
+                    mail.Body = sb.ToString();
+                }
+                smtpClient1.Send(mail);
+            }
+        }
+
+
+        public static DataTable GetDataTable(string name, string sql)
+        {
+            DataTable dt = new DataTable();
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings[name].ConnectionString);
+            SqlDataAdapter da = new SqlDataAdapter(sql, conn);
+            da.SelectCommand.CommandTimeout = 300;
+            try
+            {
+                da.Fill(dt);
+            }
+            catch
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+                if (conn != null)
+                    conn.Dispose();
+            }
+            return dt;
+        }
+
+        public static Tuple<bool, string> ExecuteNonQuery(string name, string sql)
+        {
+            SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings[name].ConnectionString);
+            SqlCommand cmd = new SqlCommand(sql, conn);
+            cmd.CommandTimeout = 300;
+            try
+            {
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
+            catch (Exception ex)
+            {
+                return new Tuple<bool, string>(false, "Excute SQL error, SQL: " + sql + " Message + " + ex.ToString());
+            }
+            finally
+            {
+                if (conn.State != System.Data.ConnectionState.Closed)
+                    conn.Close();
+                conn.Dispose();
+            }
+            return new Tuple<bool, string>(true, string.Empty);
+        }
+
+    }
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="MyAdvantechWS" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="MyAdvantechWS" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="MyAdvantechWS">
+      <s:element name="HelloKittyClock">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloKittyClockResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloKittyClockResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncCatalogPriceATP">
+        <s:complexType />
+      </s:element>
+      <s:element name="SyncCatalogPriceATPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncCatalogPriceATPResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloKittyClockSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloKittyClock" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittyClockSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloKittyClockResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncCatalogPriceATPSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncCatalogPriceATP" />
+  </wsdl:message>
+  <wsdl:message name="SyncCatalogPriceATPSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncCatalogPriceATPResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AutoJobSoap">
+    <wsdl:operation name="HelloKittyClock">
+      <wsdl:input message="tns:HelloKittyClockSoapIn" />
+      <wsdl:output message="tns:HelloKittyClockSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncCatalogPriceATP">
+      <wsdl:input message="tns:SyncCatalogPriceATPSoapIn" />
+      <wsdl:output message="tns:SyncCatalogPriceATPSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AutoJobSoap" type="tns:AutoJobSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKittyClock">
+      <soap:operation soapAction="MyAdvantechWS/HelloKittyClock" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCatalogPriceATP">
+      <soap:operation soapAction="MyAdvantechWS/SyncCatalogPriceATP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AutoJobSoap12" type="tns:AutoJobSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKittyClock">
+      <soap12:operation soapAction="MyAdvantechWS/HelloKittyClock" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncCatalogPriceATP">
+      <soap12:operation soapAction="MyAdvantechWS/SyncCatalogPriceATP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AutoJob">
+    <wsdl:port name="AutoJobSoap" binding="tns:AutoJobSoap">
+      <soap:address location="http://my.advantech.com/Services/AutoJob.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AutoJobSoap12" binding="tns:AutoJobSoap12">
+      <soap12:address location="http://my.advantech.com/Services/AutoJob.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

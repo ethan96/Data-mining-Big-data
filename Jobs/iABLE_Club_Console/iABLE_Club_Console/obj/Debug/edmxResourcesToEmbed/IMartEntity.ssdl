@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAdvantechGlobalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="RewardItem">
+    <Key>
+      <PropertyRef Name="RewardID" />
+    </Key>
+    <Property Name="RewardID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ActivityID" Type="int" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="DescriptionShort" Type="nvarchar" MaxLength="500" />
+    <Property Name="DescriptionLong" Type="nvarchar(max)" />
+    <Property Name="PartNo" Type="nvarchar" MaxLength="54" />
+    <Property Name="Point" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="ImageFile" Type="varchar(max)" />
+    <Property Name="ExternalURL" Type="nvarchar" MaxLength="1000" />
+    <Property Name="StartDate" Type="datetime" />
+    <Property Name="EndDate" Type="datetime" />
+    <Property Name="EffectiveDate" Type="datetime" />
+    <Property Name="SendMailDate" Type="datetime" />
+    <Property Name="StockQty" Type="int" />
+    <Property Name="Sequnece" Type="int" />
+    <Property Name="PublishStatus" Type="bit" />
+    <Property Name="Currecny" Type="nvarchar" MaxLength="20" />
+    <Property Name="Money" Type="money" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="RewardRecord">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+    <Property Name="RewardID" Type="int" />
+    <Property Name="ActivityID" Type="int" />
+    <Property Name="TransactionType" Type="int" />
+    <Property Name="RecordType" Type="int" />
+    <Property Name="OrderNo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qty" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="Point" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="TotalPoint" Type="decimal" Precision="18" Scale="0" />
+    <Property Name="SalesEmail" Type="nvarchar" MaxLength="255" />
+    <Property Name="Receiver1" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailAddress1" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zip1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mobile1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tel1" Type="nvarchar" MaxLength="255" />
+    <Property Name="Receiver2" Type="nvarchar" MaxLength="100" />
+    <Property Name="EmailAddress2" Type="nvarchar" MaxLength="100" />
+    <Property Name="CompanyName2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Zip2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Address2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Mobile2" Type="nvarchar" MaxLength="255" />
+    <Property Name="Tel2" Type="nvarchar" MaxLength="255" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+    <Property Name="UpdatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="ShippingTime" Type="datetime" />
+    <Property Name="SendMailStatus_Internal" Type="int" />
+    <Property Name="SendMailStatus_Corporate" Type="int" />
+    <Property Name="SendMailStatus_Sales" Type="int" />
+  </EntityType>
+  <EntityType Name="RewardUserLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreID" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserID" Type="nvarchar" MaxLength="100" />
+    <Property Name="LogType" Type="nvarchar" MaxLength="30" />
+    <Property Name="URL" Type="nvarchar" MaxLength="1200" />
+    <Property Name="Message" Type="nvarchar(max)" />
+    <Property Name="CreatedBy" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedDate" Type="datetime" />
+  </EntityType>
+  <EntityContainer Name="MyAdvantechGlobalModelStoreContainer">
+    <EntitySet Name="RewardItem" EntityType="Self.RewardItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RewardRecord" EntityType="Self.RewardRecord" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RewardUserLog" EntityType="Self.RewardUserLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://eq.advantech.com:3000/Services/QuoteExit.asmx?wsdl" docRef="http://eq.advantech.com:3000/Services/QuoteExit.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <soap address="http://eq.advantech.com:3000/Services/QuoteExit.asmx" xmlns:q1="http://tempuri.org/" binding="q1:quoteExitSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+  <soap address="http://eq.advantech.com:3000/Services/QuoteExit.asmx" xmlns:q2="http://tempuri.org/" binding="q2:quoteExitSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
+</discovery>

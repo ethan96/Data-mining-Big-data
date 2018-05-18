@@ -1,0 +1,1213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="AdvProspectDb" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="AdvProspectDb" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="AdvProspectDb">
+      <s:element name="HelloKitty">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloKittyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloKittyResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsProcessedAlibabaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsProcessedAlibabaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsProcessedAlibabaEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessTracepartEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTracePartMailBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessTracepartEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessTracepartEmailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessTracepartsExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcelInBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessTracepartsExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessTracepartsExcelResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessGlobalspecEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strGlobalspecMailBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessGlobalspecEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessGlobalspecEmailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessGlobalspecExcel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ExcelInBytes" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessGlobalspecExcelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessGlobalspecExcelResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessDirectIndustrySalesInquiryEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strTracePartMailBody" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessDirectIndustrySalesInquiryEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessDirectIndustrySalesInquiryEmailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessAlibabaEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strAlibaMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strEmailID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ProcessAlibabaEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ProcessAlibabaEmailResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllModelString">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllModelStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllModelStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchedModelsFromText">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strText" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strModels" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMatchedModelsFromTextResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMatchedModelsFromTextResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="CalculateEngagementPoint">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="From_CreateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To_CreateDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeOptyFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeEStoreOrderFiltration" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CalculateEngagementPointResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CalculateEngagementPointResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportCuratedActivityFromLetter">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LetterId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActionType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="URL" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="WebUserType" type="tns:WebUserTypeEnum" />
+            <s:element minOccurs="1" maxOccurs="1" name="ActivityType" type="tns:ActivityType" />
+            <s:element minOccurs="0" maxOccurs="1" name="InterestedProduct" type="tns:ArrayOfProductLevelAndValue" />
+            <s:element minOccurs="0" maxOccurs="1" name="SiebelSourceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="WebUserTypeEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="Alibaba" />
+          <s:enumeration value="DirectIndustry_ClickThrough" />
+          <s:enumeration value="DirectIndustry_SalesRequest" />
+          <s:enumeration value="GlobalSpec" />
+          <s:enumeration value="TracePart" />
+          <s:enumeration value="OtherExtSource" />
+          <s:enumeration value="ON24" />
+          <s:enumeration value="ASF" />
+          <s:enumeration value="ADF" />
+          <s:enumeration value="Support" />
+          <s:enumeration value="RMA" />
+          <s:enumeration value="SUSI_Access" />
+          <s:enumeration value="Web_Access" />
+          <s:enumeration value="Adam_Forum" />
+          <s:enumeration value="iPlanet_Forum" />
+          <s:enumeration value="Corporate_Website" />
+          <s:enumeration value="Sector_Portal" />
+          <s:enumeration value="eStore" />
+          <s:enumeration value="MyAdvantech" />
+          <s:enumeration value="eDM" />
+          <s:enumeration value="AOnlineSalesPortal" />
+          <s:enumeration value="Resource" />
+          <s:enumeration value="Siebel" />
+          <s:enumeration value="iPROS" />
+          <s:enumeration value="eGrabber" />
+          <s:enumeration value="Innocore" />
+          <s:enumeration value="Dlog" />
+          <s:enumeration value="iServicesBlog" />
+          <s:enumeration value="SolutionDay" />
+          <s:enumeration value="AGS" />
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="ActivityType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Abandoned_Live_Chat" />
+          <s:enumeration value="Abort_Check_Out" />
+          <s:enumeration value="Add_To_Cart" />
+          <s:enumeration value="Browse_CMS" />
+          <s:enumeration value="Browse_ContactPage" />
+          <s:enumeration value="Browse_General_Info" />
+          <s:enumeration value="Browse_ProductPage" />
+          <s:enumeration value="Browse_ProductPage_From_Sales_Inquiries" />
+          <s:enumeration value="Build_System" />
+          <s:enumeration value="Buy_List" />
+          <s:enumeration value="Call_Inbound" />
+          <s:enumeration value="Click_Forward_To_Friends" />
+          <s:enumeration value="Click_Live_Chat" />
+          <s:enumeration value="Click_To_SNS" />
+          <s:enumeration value="Compare_Product" />
+          <s:enumeration value="Download_3DModel" />
+          <s:enumeration value="Download_MarketingFile" />
+          <s:enumeration value="Download_SR" />
+          <s:enumeration value="Download_TechFile" />
+          <s:enumeration value="eDM_Open" />
+          <s:enumeration value="eDM_Click" />
+          <s:enumeration value="eStore_Customize_Function" />
+          <s:enumeration value="Email_Inbound" />
+          <s:enumeration value="Exhibition_Participant" />
+          <s:enumeration value="Get_Quote" />
+          <s:enumeration value="Giveaway" />
+          <s:enumeration value="Hoovers_List" />
+          <s:enumeration value="Live_Chat" />
+          <s:enumeration value="Media_PR" />
+          <s:enumeration value="Purchase" />
+          <s:enumeration value="Register_Product" />
+          <s:enumeration value="Registration" />
+          <s:enumeration value="Registration_Without_Pwd" />
+          <s:enumeration value="Request_Qty_Discount" />
+          <s:enumeration value="Sales_Inquiry" />
+          <s:enumeration value="Search_Product" />
+          <s:enumeration value="Share_To_SNS" />
+          <s:enumeration value="Send_SR" />
+          <s:enumeration value="SolutionDay_Forum_Seminar" />
+          <s:enumeration value="Subscribe_ENews" />
+          <s:enumeration value="Training" />
+          <s:enumeration value="Update_User_Profile" />
+          <s:enumeration value="Uploaded_List" />
+          <s:enumeration value="OnlineForum_Watch_Video" />
+          <s:enumeration value="OnlineForum_Visit_Booth" />
+          <s:enumeration value="OnlineForum_Vew_Document" />
+          <s:enumeration value="OnlineForum_Stay_Over_90_Minutes" />
+        </s:restriction>
+      </s:simpleType>
+      <s:complexType name="ArrayOfProductLevelAndValue">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ProductLevelAndValue" nillable="true" type="tns:ProductLevelAndValue" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ProductLevelAndValue">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="ProductLevel" type="tns:ProductLevelEnum" />
+          <s:element minOccurs="0" maxOccurs="1" name="ProductValue" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:simpleType name="ProductLevelEnum">
+        <s:restriction base="s:string">
+          <s:enumeration value="ProductGroup" />
+          <s:enumeration value="InterestedProduct" />
+          <s:enumeration value="SubCategory" />
+          <s:enumeration value="ModelNo" />
+          <s:enumeration value="PartNo" />
+          <s:enumeration value="SerialNo" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportCuratedActivityFromLetterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportCuratedActivityFromLetterResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadFromUnica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="From_CreateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To_CreateDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeOptyFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeEStoreOrderFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TrackAllStage" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Quality" type="tns:LeadQuality" />
+            <s:element minOccurs="1" maxOccurs="1" name="SingleAct" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SourceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LeadDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="LeadQuality">
+        <s:restriction base="s:string">
+          <s:enumeration value="Hot" />
+          <s:enumeration value="Warm" />
+          <s:enumeration value="Cool" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="ImportLeadFromUnicaResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadFromUnicaResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadDaily">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="From_CreateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To_CreateDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeOptyFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeEStoreOrderFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TrackAllStage" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="Quality" type="tns:LeadQuality" />
+            <s:element minOccurs="1" maxOccurs="1" name="SingleAct" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="SourceId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadDailyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ImportLeadDailyResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadFromUploadedList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ListId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="From_CreateDate" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To_CreateDate" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeOptyFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="IncludeEStoreOrderFiltration" type="s:boolean" />
+            <s:element minOccurs="1" maxOccurs="1" name="TrackAllStage" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImportLeadFromUploadedListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImportLeadFromUploadedListResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobFunction" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactDept" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SrcName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WebUserType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Comments" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAA" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntProd" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="User" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateContactResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ActType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActDesc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ActComment" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ContactId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="SourceId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ActStatus" type="tns:ActivityStatus" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ActivityStatus">
+        <s:restriction base="s:string">
+          <s:enumeration value="Not_Started" />
+          <s:enumeration value="In_Progress" />
+          <s:enumeration value="Approved" />
+          <s:enumeration value="Cancelled" />
+          <s:enumeration value="Done" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="CreateActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CreateActivityResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiebelActivity">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RowId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetSiebelActivityResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetSiebelActivityResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="AccountId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FirstName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LastName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="JobTitle" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkPhone" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="WorkFax" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OwnerEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="RBU" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="BAA" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="IntProd" type="tns:ArrayOfString" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateContactResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="ErrMsg" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InferAccountNameByEmail">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strEmail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountCorpURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InferAccountNameByEmailResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InferAccountNameByEmailResult" type="s:boolean" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="strAccountCorpURL" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteACLECAMPJob">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="JobName" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ExecuteACLECAMPJobResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateUNICAOffer_TestServer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="OfferId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OfferName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="OfferDesc" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateUNICAOffer_TestServerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreateUNICAOffer_TestServerResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SyncSimpleFormInterestedProductContactToSiebel">
+        <s:complexType />
+      </s:element>
+      <s:element name="SyncSimpleFormInterestedProductContactToSiebelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SyncSimpleFormInterestedProductContactToSiebelResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloKittySoapIn">
+    <wsdl:part name="parameters" element="tns:HelloKitty" />
+  </wsdl:message>
+  <wsdl:message name="HelloKittySoapOut">
+    <wsdl:part name="parameters" element="tns:HelloKittyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsProcessedAlibabaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:IsProcessedAlibabaEmail" />
+  </wsdl:message>
+  <wsdl:message name="IsProcessedAlibabaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:IsProcessedAlibabaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessTracepartEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessTracepartEmail" />
+  </wsdl:message>
+  <wsdl:message name="ProcessTracepartEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessTracepartEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessTracepartsExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessTracepartsExcel" />
+  </wsdl:message>
+  <wsdl:message name="ProcessTracepartsExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessTracepartsExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessGlobalspecEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessGlobalspecEmail" />
+  </wsdl:message>
+  <wsdl:message name="ProcessGlobalspecEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessGlobalspecEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessGlobalspecExcelSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessGlobalspecExcel" />
+  </wsdl:message>
+  <wsdl:message name="ProcessGlobalspecExcelSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessGlobalspecExcelResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessDirectIndustrySalesInquiryEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessDirectIndustrySalesInquiryEmail" />
+  </wsdl:message>
+  <wsdl:message name="ProcessDirectIndustrySalesInquiryEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessDirectIndustrySalesInquiryEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAlibabaEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:ProcessAlibabaEmail" />
+  </wsdl:message>
+  <wsdl:message name="ProcessAlibabaEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:ProcessAlibabaEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllModelStringSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllModelString" />
+  </wsdl:message>
+  <wsdl:message name="GetAllModelStringSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllModelStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchedModelsFromTextSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMatchedModelsFromText" />
+  </wsdl:message>
+  <wsdl:message name="GetMatchedModelsFromTextSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMatchedModelsFromTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEngagementPointSoapIn">
+    <wsdl:part name="parameters" element="tns:CalculateEngagementPoint" />
+  </wsdl:message>
+  <wsdl:message name="CalculateEngagementPointSoapOut">
+    <wsdl:part name="parameters" element="tns:CalculateEngagementPointResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportCuratedActivityFromLetterSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportCuratedActivityFromLetter" />
+  </wsdl:message>
+  <wsdl:message name="ImportCuratedActivityFromLetterSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportCuratedActivityFromLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadFromUnicaSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadFromUnica" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadFromUnicaSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadFromUnicaResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadDailySoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadDaily" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadDailySoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadDailyResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadFromUploadedListSoapIn">
+    <wsdl:part name="parameters" element="tns:ImportLeadFromUploadedList" />
+  </wsdl:message>
+  <wsdl:message name="ImportLeadFromUploadedListSoapOut">
+    <wsdl:part name="parameters" element="tns:ImportLeadFromUploadedListResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateContactSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateContact" />
+  </wsdl:message>
+  <wsdl:message name="CreateContactSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:CreateActivity" />
+  </wsdl:message>
+  <wsdl:message name="CreateActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:CreateActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetSiebelActivitySoapIn">
+    <wsdl:part name="parameters" element="tns:GetSiebelActivity" />
+  </wsdl:message>
+  <wsdl:message name="GetSiebelActivitySoapOut">
+    <wsdl:part name="parameters" element="tns:GetSiebelActivityResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateContact" />
+  </wsdl:message>
+  <wsdl:message name="UpdateContactSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="InferAccountNameByEmailSoapIn">
+    <wsdl:part name="parameters" element="tns:InferAccountNameByEmail" />
+  </wsdl:message>
+  <wsdl:message name="InferAccountNameByEmailSoapOut">
+    <wsdl:part name="parameters" element="tns:InferAccountNameByEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteACLECAMPJobSoapIn">
+    <wsdl:part name="parameters" element="tns:ExecuteACLECAMPJob" />
+  </wsdl:message>
+  <wsdl:message name="ExecuteACLECAMPJobSoapOut">
+    <wsdl:part name="parameters" element="tns:ExecuteACLECAMPJobResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateUNICAOffer_TestServerSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateUNICAOffer_TestServer" />
+  </wsdl:message>
+  <wsdl:message name="CreateUNICAOffer_TestServerSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateUNICAOffer_TestServerResponse" />
+  </wsdl:message>
+  <wsdl:message name="SyncSimpleFormInterestedProductContactToSiebelSoapIn">
+    <wsdl:part name="parameters" element="tns:SyncSimpleFormInterestedProductContactToSiebel" />
+  </wsdl:message>
+  <wsdl:message name="SyncSimpleFormInterestedProductContactToSiebelSoapOut">
+    <wsdl:part name="parameters" element="tns:SyncSimpleFormInterestedProductContactToSiebelResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IntApiSoap">
+    <wsdl:operation name="HelloKitty">
+      <wsdl:input message="tns:HelloKittySoapIn" />
+      <wsdl:output message="tns:HelloKittySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsProcessedAlibabaEmail">
+      <wsdl:input message="tns:IsProcessedAlibabaEmailSoapIn" />
+      <wsdl:output message="tns:IsProcessedAlibabaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartEmail">
+      <wsdl:input message="tns:ProcessTracepartEmailSoapIn" />
+      <wsdl:output message="tns:ProcessTracepartEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartsExcel">
+      <wsdl:input message="tns:ProcessTracepartsExcelSoapIn" />
+      <wsdl:output message="tns:ProcessTracepartsExcelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecEmail">
+      <wsdl:input message="tns:ProcessGlobalspecEmailSoapIn" />
+      <wsdl:output message="tns:ProcessGlobalspecEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecExcel">
+      <wsdl:input message="tns:ProcessGlobalspecExcelSoapIn" />
+      <wsdl:output message="tns:ProcessGlobalspecExcelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDirectIndustrySalesInquiryEmail">
+      <wsdl:input message="tns:ProcessDirectIndustrySalesInquiryEmailSoapIn" />
+      <wsdl:output message="tns:ProcessDirectIndustrySalesInquiryEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ProcessAlibabaEmail">
+      <wsdl:input message="tns:ProcessAlibabaEmailSoapIn" />
+      <wsdl:output message="tns:ProcessAlibabaEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModelString">
+      <wsdl:input message="tns:GetAllModelStringSoapIn" />
+      <wsdl:output message="tns:GetAllModelStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchedModelsFromText">
+      <wsdl:input message="tns:GetMatchedModelsFromTextSoapIn" />
+      <wsdl:output message="tns:GetMatchedModelsFromTextSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEngagementPoint">
+      <wsdl:input message="tns:CalculateEngagementPointSoapIn" />
+      <wsdl:output message="tns:CalculateEngagementPointSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportCuratedActivityFromLetter">
+      <wsdl:input message="tns:ImportCuratedActivityFromLetterSoapIn" />
+      <wsdl:output message="tns:ImportCuratedActivityFromLetterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUnica">
+      <wsdl:input message="tns:ImportLeadFromUnicaSoapIn" />
+      <wsdl:output message="tns:ImportLeadFromUnicaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadDaily">
+      <wsdl:input message="tns:ImportLeadDailySoapIn" />
+      <wsdl:output message="tns:ImportLeadDailySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUploadedList">
+      <wsdl:input message="tns:ImportLeadFromUploadedListSoapIn" />
+      <wsdl:output message="tns:ImportLeadFromUploadedListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateContact">
+      <wsdl:input message="tns:CreateContactSoapIn" />
+      <wsdl:output message="tns:CreateContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <wsdl:input message="tns:CreateActivitySoapIn" />
+      <wsdl:output message="tns:CreateActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSiebelActivity">
+      <wsdl:input message="tns:GetSiebelActivitySoapIn" />
+      <wsdl:output message="tns:GetSiebelActivitySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <wsdl:input message="tns:UpdateContactSoapIn" />
+      <wsdl:output message="tns:UpdateContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InferAccountNameByEmail">
+      <wsdl:input message="tns:InferAccountNameByEmailSoapIn" />
+      <wsdl:output message="tns:InferAccountNameByEmailSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteACLECAMPJob">
+      <wsdl:input message="tns:ExecuteACLECAMPJobSoapIn" />
+      <wsdl:output message="tns:ExecuteACLECAMPJobSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUNICAOffer_TestServer">
+      <wsdl:input message="tns:CreateUNICAOffer_TestServerSoapIn" />
+      <wsdl:output message="tns:CreateUNICAOffer_TestServerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SyncSimpleFormInterestedProductContactToSiebel">
+      <wsdl:input message="tns:SyncSimpleFormInterestedProductContactToSiebelSoapIn" />
+      <wsdl:output message="tns:SyncSimpleFormInterestedProductContactToSiebelSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IntApiSoap" type="tns:IntApiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKitty">
+      <soap:operation soapAction="AdvProspectDb/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsProcessedAlibabaEmail">
+      <soap:operation soapAction="AdvProspectDb/IsProcessedAlibabaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartEmail">
+      <soap:operation soapAction="AdvProspectDb/ProcessTracepartEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartsExcel">
+      <soap:operation soapAction="AdvProspectDb/ProcessTracepartsExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecEmail">
+      <soap:operation soapAction="AdvProspectDb/ProcessGlobalspecEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecExcel">
+      <soap:operation soapAction="AdvProspectDb/ProcessGlobalspecExcel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDirectIndustrySalesInquiryEmail">
+      <soap:operation soapAction="AdvProspectDb/ProcessDirectIndustrySalesInquiryEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessAlibabaEmail">
+      <soap:operation soapAction="AdvProspectDb/ProcessAlibabaEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModelString">
+      <soap:operation soapAction="AdvProspectDb/GetAllModelString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchedModelsFromText">
+      <soap:operation soapAction="AdvProspectDb/GetMatchedModelsFromText" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEngagementPoint">
+      <soap:operation soapAction="AdvProspectDb/CalculateEngagementPoint" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportCuratedActivityFromLetter">
+      <soap:operation soapAction="AdvProspectDb/ImportCuratedActivityFromLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUnica">
+      <soap:operation soapAction="AdvProspectDb/ImportLeadFromUnica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadDaily">
+      <soap:operation soapAction="AdvProspectDb/ImportLeadDaily" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUploadedList">
+      <soap:operation soapAction="AdvProspectDb/ImportLeadFromUploadedList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContact">
+      <soap:operation soapAction="AdvProspectDb/CreateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <soap:operation soapAction="AdvProspectDb/CreateActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiebelActivity">
+      <soap:operation soapAction="AdvProspectDb/GetSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <soap:operation soapAction="AdvProspectDb/UpdateContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InferAccountNameByEmail">
+      <soap:operation soapAction="AdvProspectDb/InferAccountNameByEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteACLECAMPJob">
+      <soap:operation soapAction="AdvProspectDb/ExecuteACLECAMPJob" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUNICAOffer_TestServer">
+      <soap:operation soapAction="AdvProspectDb/CreateUNICAOffer_TestServer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncSimpleFormInterestedProductContactToSiebel">
+      <soap:operation soapAction="AdvProspectDb/SyncSimpleFormInterestedProductContactToSiebel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="IntApiSoap12" type="tns:IntApiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloKitty">
+      <soap12:operation soapAction="AdvProspectDb/HelloKitty" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsProcessedAlibabaEmail">
+      <soap12:operation soapAction="AdvProspectDb/IsProcessedAlibabaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartEmail">
+      <soap12:operation soapAction="AdvProspectDb/ProcessTracepartEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessTracepartsExcel">
+      <soap12:operation soapAction="AdvProspectDb/ProcessTracepartsExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecEmail">
+      <soap12:operation soapAction="AdvProspectDb/ProcessGlobalspecEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessGlobalspecExcel">
+      <soap12:operation soapAction="AdvProspectDb/ProcessGlobalspecExcel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessDirectIndustrySalesInquiryEmail">
+      <soap12:operation soapAction="AdvProspectDb/ProcessDirectIndustrySalesInquiryEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ProcessAlibabaEmail">
+      <soap12:operation soapAction="AdvProspectDb/ProcessAlibabaEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModelString">
+      <soap12:operation soapAction="AdvProspectDb/GetAllModelString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMatchedModelsFromText">
+      <soap12:operation soapAction="AdvProspectDb/GetMatchedModelsFromText" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CalculateEngagementPoint">
+      <soap12:operation soapAction="AdvProspectDb/CalculateEngagementPoint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportCuratedActivityFromLetter">
+      <soap12:operation soapAction="AdvProspectDb/ImportCuratedActivityFromLetter" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUnica">
+      <soap12:operation soapAction="AdvProspectDb/ImportLeadFromUnica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadDaily">
+      <soap12:operation soapAction="AdvProspectDb/ImportLeadDaily" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImportLeadFromUploadedList">
+      <soap12:operation soapAction="AdvProspectDb/ImportLeadFromUploadedList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateContact">
+      <soap12:operation soapAction="AdvProspectDb/CreateContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateActivity">
+      <soap12:operation soapAction="AdvProspectDb/CreateActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSiebelActivity">
+      <soap12:operation soapAction="AdvProspectDb/GetSiebelActivity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateContact">
+      <soap12:operation soapAction="AdvProspectDb/UpdateContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InferAccountNameByEmail">
+      <soap12:operation soapAction="AdvProspectDb/InferAccountNameByEmail" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ExecuteACLECAMPJob">
+      <soap12:operation soapAction="AdvProspectDb/ExecuteACLECAMPJob" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUNICAOffer_TestServer">
+      <soap12:operation soapAction="AdvProspectDb/CreateUNICAOffer_TestServer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SyncSimpleFormInterestedProductContactToSiebel">
+      <soap12:operation soapAction="AdvProspectDb/SyncSimpleFormInterestedProductContactToSiebel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IntApi">
+    <wsdl:port name="IntApiSoap" binding="tns:IntApiSoap">
+      <soap:address location="http://pis.advantech.com:7100/Services/IntApi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="IntApiSoap12" binding="tns:IntApiSoap12">
+      <soap12:address location="http://pis.advantech.com:7100/Services/IntApi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

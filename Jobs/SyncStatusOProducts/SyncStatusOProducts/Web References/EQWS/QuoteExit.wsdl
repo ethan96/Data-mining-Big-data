@@ -1,0 +1,1036 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="isPhaseOut">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="pn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isPhaseOutResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isPhaseOutResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InitApprovalFlow">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ROWID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ERPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Detail" type="tns:ArrayOfStruct_GP_Detail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStruct_GP_Detail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="struct_GP_Detail" type="tns:struct_GP_Detail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="struct_GP_Detail">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="lineNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="Itp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="QTY" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="InitApprovalFlowResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="isApproved">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isApprovedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isApprovedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isRejected">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isRejectedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isRejectedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isInApproved">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isInApprovedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isInApprovedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevel">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rowid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="erpid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Detail" type="tns:ArrayOfStruct_GP_Detail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevelResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getLevelResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="toQuotation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="erpid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="createdBy" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Desc" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="comment" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="isRepeatedOrder" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="org" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Detail" type="tns:ArrayOfStruct_Quote_Detail" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfStruct_Quote_Detail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="struct_Quote_Detail" type="tns:struct_Quote_Detail" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="struct_Quote_Detail">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="quoteId" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="lineNo" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="partNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="description" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="qty" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="listPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="unitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="newUnitPrice" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="itp" type="s:decimal" />
+          <s:element minOccurs="1" maxOccurs="1" name="newItp" type="s:decimal" />
+          <s:element minOccurs="0" maxOccurs="1" name="deliveryPlant" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="category" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="classABC" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="rohs" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="ewFlag" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="reqDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="dueDate" type="s:dateTime" />
+          <s:element minOccurs="1" maxOccurs="1" name="satisfyFlag" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="canBeConfirmed" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="custMaterial" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="inventory" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="oType" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="modelNo" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="SPRNO" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="toQuotationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="toQuotationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TEST">
+        <s:complexType />
+      </s:element>
+      <s:element name="TESTResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="TESTResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationListByCompany">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ERPID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationListByCompanyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationDetailById">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="quoteId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotationDetailByIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ds">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isQuoteExpired">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="quoteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isQuoteExpiredResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isQuoteExpiredResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevelandAppoverList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rowId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="erpid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GPLevel_and_Approver">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getLevelandAppoverListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getLevelandAppoverListResult" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="GPLevel_and_Approver">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogSSOId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tempId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LogSSOIdResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="isValidSSO">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="tempId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="userId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isValidSSOResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isValidSSOResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApprovalProcess">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ACId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ApprovalProcessResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getITP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORGId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PARTNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CURR" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="companyId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getITPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="getITPResult" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setITP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ORGId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PARTNO" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CURR" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ITP" type="s:decimal" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="setITPResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="isCanRepeatOrder">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rowID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="isCanRepeatOrderResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="isCanRepeatOrderResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreateAccountContactQuotationFromSPR">
+        <s:complexType />
+      </s:element>
+      <s:element name="CreateAccountContactQuotationFromSPRResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="getQuotePageStrCustomer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getQuotePageStrCustomerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getQuotePageStrCustomerResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOptyIdByQuoteId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="quoteId" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getOptyIdByQuoteIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getOptyIdByQuoteIdResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPTD">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PartNo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IsPTDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="IsPTDResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="isPhaseOutSoapIn">
+    <wsdl:part name="parameters" element="tns:isPhaseOut" />
+  </wsdl:message>
+  <wsdl:message name="isPhaseOutSoapOut">
+    <wsdl:part name="parameters" element="tns:isPhaseOutResponse" />
+  </wsdl:message>
+  <wsdl:message name="InitApprovalFlowSoapIn">
+    <wsdl:part name="parameters" element="tns:InitApprovalFlow" />
+  </wsdl:message>
+  <wsdl:message name="InitApprovalFlowSoapOut">
+    <wsdl:part name="parameters" element="tns:InitApprovalFlowResponse" />
+  </wsdl:message>
+  <wsdl:message name="isApprovedSoapIn">
+    <wsdl:part name="parameters" element="tns:isApproved" />
+  </wsdl:message>
+  <wsdl:message name="isApprovedSoapOut">
+    <wsdl:part name="parameters" element="tns:isApprovedResponse" />
+  </wsdl:message>
+  <wsdl:message name="isRejectedSoapIn">
+    <wsdl:part name="parameters" element="tns:isRejected" />
+  </wsdl:message>
+  <wsdl:message name="isRejectedSoapOut">
+    <wsdl:part name="parameters" element="tns:isRejectedResponse" />
+  </wsdl:message>
+  <wsdl:message name="isInApprovedSoapIn">
+    <wsdl:part name="parameters" element="tns:isInApproved" />
+  </wsdl:message>
+  <wsdl:message name="isInApprovedSoapOut">
+    <wsdl:part name="parameters" element="tns:isInApprovedResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLevelSoapIn">
+    <wsdl:part name="parameters" element="tns:getLevel" />
+  </wsdl:message>
+  <wsdl:message name="getLevelSoapOut">
+    <wsdl:part name="parameters" element="tns:getLevelResponse" />
+  </wsdl:message>
+  <wsdl:message name="toQuotationSoapIn">
+    <wsdl:part name="parameters" element="tns:toQuotation" />
+  </wsdl:message>
+  <wsdl:message name="toQuotationSoapOut">
+    <wsdl:part name="parameters" element="tns:toQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="TESTSoapIn">
+    <wsdl:part name="parameters" element="tns:TEST" />
+  </wsdl:message>
+  <wsdl:message name="TESTSoapOut">
+    <wsdl:part name="parameters" element="tns:TESTResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationListByCompanySoapIn">
+    <wsdl:part name="parameters" element="tns:getQuotationListByCompany" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationListByCompanySoapOut">
+    <wsdl:part name="parameters" element="tns:getQuotationListByCompanyResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationDetailByIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuotationDetailById" />
+  </wsdl:message>
+  <wsdl:message name="getQuotationDetailByIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuotationDetailByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="isQuoteExpiredSoapIn">
+    <wsdl:part name="parameters" element="tns:isQuoteExpired" />
+  </wsdl:message>
+  <wsdl:message name="isQuoteExpiredSoapOut">
+    <wsdl:part name="parameters" element="tns:isQuoteExpiredResponse" />
+  </wsdl:message>
+  <wsdl:message name="getLevelandAppoverListSoapIn">
+    <wsdl:part name="parameters" element="tns:getLevelandAppoverList" />
+  </wsdl:message>
+  <wsdl:message name="getLevelandAppoverListSoapOut">
+    <wsdl:part name="parameters" element="tns:getLevelandAppoverListResponse" />
+  </wsdl:message>
+  <wsdl:message name="LogSSOIdSoapIn">
+    <wsdl:part name="parameters" element="tns:LogSSOId" />
+  </wsdl:message>
+  <wsdl:message name="LogSSOIdSoapOut">
+    <wsdl:part name="parameters" element="tns:LogSSOIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="isValidSSOSoapIn">
+    <wsdl:part name="parameters" element="tns:isValidSSO" />
+  </wsdl:message>
+  <wsdl:message name="isValidSSOSoapOut">
+    <wsdl:part name="parameters" element="tns:isValidSSOResponse" />
+  </wsdl:message>
+  <wsdl:message name="ApprovalProcessSoapIn">
+    <wsdl:part name="parameters" element="tns:ApprovalProcess" />
+  </wsdl:message>
+  <wsdl:message name="ApprovalProcessSoapOut">
+    <wsdl:part name="parameters" element="tns:ApprovalProcessResponse" />
+  </wsdl:message>
+  <wsdl:message name="getITPSoapIn">
+    <wsdl:part name="parameters" element="tns:getITP" />
+  </wsdl:message>
+  <wsdl:message name="getITPSoapOut">
+    <wsdl:part name="parameters" element="tns:getITPResponse" />
+  </wsdl:message>
+  <wsdl:message name="setITPSoapIn">
+    <wsdl:part name="parameters" element="tns:setITP" />
+  </wsdl:message>
+  <wsdl:message name="setITPSoapOut">
+    <wsdl:part name="parameters" element="tns:setITPResponse" />
+  </wsdl:message>
+  <wsdl:message name="isCanRepeatOrderSoapIn">
+    <wsdl:part name="parameters" element="tns:isCanRepeatOrder" />
+  </wsdl:message>
+  <wsdl:message name="isCanRepeatOrderSoapOut">
+    <wsdl:part name="parameters" element="tns:isCanRepeatOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountContactQuotationFromSPRSoapIn">
+    <wsdl:part name="parameters" element="tns:CreateAccountContactQuotationFromSPR" />
+  </wsdl:message>
+  <wsdl:message name="CreateAccountContactQuotationFromSPRSoapOut">
+    <wsdl:part name="parameters" element="tns:CreateAccountContactQuotationFromSPRResponse" />
+  </wsdl:message>
+  <wsdl:message name="getQuotePageStrCustomerSoapIn">
+    <wsdl:part name="parameters" element="tns:getQuotePageStrCustomer" />
+  </wsdl:message>
+  <wsdl:message name="getQuotePageStrCustomerSoapOut">
+    <wsdl:part name="parameters" element="tns:getQuotePageStrCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="getOptyIdByQuoteIdSoapIn">
+    <wsdl:part name="parameters" element="tns:getOptyIdByQuoteId" />
+  </wsdl:message>
+  <wsdl:message name="getOptyIdByQuoteIdSoapOut">
+    <wsdl:part name="parameters" element="tns:getOptyIdByQuoteIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IsPTDSoapIn">
+    <wsdl:part name="parameters" element="tns:IsPTD" />
+  </wsdl:message>
+  <wsdl:message name="IsPTDSoapOut">
+    <wsdl:part name="parameters" element="tns:IsPTDResponse" />
+  </wsdl:message>
+  <wsdl:portType name="quoteExitSoap">
+    <wsdl:operation name="isPhaseOut">
+      <wsdl:input message="tns:isPhaseOutSoapIn" />
+      <wsdl:output message="tns:isPhaseOutSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InitApprovalFlow">
+      <wsdl:input message="tns:InitApprovalFlowSoapIn" />
+      <wsdl:output message="tns:InitApprovalFlowSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isApproved">
+      <wsdl:input message="tns:isApprovedSoapIn" />
+      <wsdl:output message="tns:isApprovedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isRejected">
+      <wsdl:input message="tns:isRejectedSoapIn" />
+      <wsdl:output message="tns:isRejectedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isInApproved">
+      <wsdl:input message="tns:isInApprovedSoapIn" />
+      <wsdl:output message="tns:isInApprovedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLevel">
+      <wsdl:input message="tns:getLevelSoapIn" />
+      <wsdl:output message="tns:getLevelSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="toQuotation">
+      <wsdl:input message="tns:toQuotationSoapIn" />
+      <wsdl:output message="tns:toQuotationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <wsdl:input message="tns:TESTSoapIn" />
+      <wsdl:output message="tns:TESTSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListByCompany">
+      <wsdl:input message="tns:getQuotationListByCompanySoapIn" />
+      <wsdl:output message="tns:getQuotationListByCompanySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationDetailById">
+      <wsdl:input message="tns:getQuotationDetailByIdSoapIn" />
+      <wsdl:output message="tns:getQuotationDetailByIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isQuoteExpired">
+      <wsdl:input message="tns:isQuoteExpiredSoapIn" />
+      <wsdl:output message="tns:isQuoteExpiredSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getLevelandAppoverList">
+      <wsdl:input message="tns:getLevelandAppoverListSoapIn" />
+      <wsdl:output message="tns:getLevelandAppoverListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LogSSOId">
+      <wsdl:input message="tns:LogSSOIdSoapIn" />
+      <wsdl:output message="tns:LogSSOIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isValidSSO">
+      <wsdl:input message="tns:isValidSSOSoapIn" />
+      <wsdl:output message="tns:isValidSSOSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ApprovalProcess">
+      <wsdl:input message="tns:ApprovalProcessSoapIn" />
+      <wsdl:output message="tns:ApprovalProcessSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getITP">
+      <wsdl:input message="tns:getITPSoapIn" />
+      <wsdl:output message="tns:getITPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="setITP">
+      <wsdl:input message="tns:setITPSoapIn" />
+      <wsdl:output message="tns:setITPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="isCanRepeatOrder">
+      <wsdl:input message="tns:isCanRepeatOrderSoapIn" />
+      <wsdl:output message="tns:isCanRepeatOrderSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountContactQuotationFromSPR">
+      <wsdl:input message="tns:CreateAccountContactQuotationFromSPRSoapIn" />
+      <wsdl:output message="tns:CreateAccountContactQuotationFromSPRSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotePageStrCustomer">
+      <wsdl:input message="tns:getQuotePageStrCustomerSoapIn" />
+      <wsdl:output message="tns:getQuotePageStrCustomerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getOptyIdByQuoteId">
+      <wsdl:input message="tns:getOptyIdByQuoteIdSoapIn" />
+      <wsdl:output message="tns:getOptyIdByQuoteIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IsPTD">
+      <wsdl:input message="tns:IsPTDSoapIn" />
+      <wsdl:output message="tns:IsPTDSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="quoteExitSoap" type="tns:quoteExitSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isPhaseOut">
+      <soap:operation soapAction="http://tempuri.org/isPhaseOut" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitApprovalFlow">
+      <soap:operation soapAction="http://tempuri.org/InitApprovalFlow" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isApproved">
+      <soap:operation soapAction="http://tempuri.org/isApproved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRejected">
+      <soap:operation soapAction="http://tempuri.org/isRejected" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isInApproved">
+      <soap:operation soapAction="http://tempuri.org/isInApproved" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevel">
+      <soap:operation soapAction="http://tempuri.org/getLevel" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toQuotation">
+      <soap:operation soapAction="http://tempuri.org/toQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <soap:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListByCompany">
+      <soap:operation soapAction="http://tempuri.org/getQuotationListByCompany" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationDetailById">
+      <soap:operation soapAction="http://tempuri.org/getQuotationDetailById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isQuoteExpired">
+      <soap:operation soapAction="http://tempuri.org/isQuoteExpired" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelandAppoverList">
+      <soap:operation soapAction="http://tempuri.org/getLevelandAppoverList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogSSOId">
+      <soap:operation soapAction="http://tempuri.org/LogSSOId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidSSO">
+      <soap:operation soapAction="http://tempuri.org/isValidSSO" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovalProcess">
+      <soap:operation soapAction="http://tempuri.org/ApprovalProcess" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getITP">
+      <soap:operation soapAction="http://tempuri.org/getITP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setITP">
+      <soap:operation soapAction="http://tempuri.org/setITP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCanRepeatOrder">
+      <soap:operation soapAction="http://tempuri.org/isCanRepeatOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountContactQuotationFromSPR">
+      <soap:operation soapAction="http://tempuri.org/CreateAccountContactQuotationFromSPR" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotePageStrCustomer">
+      <soap:operation soapAction="http://tempuri.org/getQuotePageStrCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOptyIdByQuoteId">
+      <soap:operation soapAction="http://tempuri.org/getOptyIdByQuoteId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPTD">
+      <soap:operation soapAction="http://tempuri.org/IsPTD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="quoteExitSoap12" type="tns:quoteExitSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="isPhaseOut">
+      <soap12:operation soapAction="http://tempuri.org/isPhaseOut" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InitApprovalFlow">
+      <soap12:operation soapAction="http://tempuri.org/InitApprovalFlow" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isApproved">
+      <soap12:operation soapAction="http://tempuri.org/isApproved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isRejected">
+      <soap12:operation soapAction="http://tempuri.org/isRejected" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isInApproved">
+      <soap12:operation soapAction="http://tempuri.org/isInApproved" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevel">
+      <soap12:operation soapAction="http://tempuri.org/getLevel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="toQuotation">
+      <soap12:operation soapAction="http://tempuri.org/toQuotation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TEST">
+      <soap12:operation soapAction="http://tempuri.org/TEST" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListByCompany">
+      <soap12:operation soapAction="http://tempuri.org/getQuotationListByCompany" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationDetailById">
+      <soap12:operation soapAction="http://tempuri.org/getQuotationDetailById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isQuoteExpired">
+      <soap12:operation soapAction="http://tempuri.org/isQuoteExpired" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getLevelandAppoverList">
+      <soap12:operation soapAction="http://tempuri.org/getLevelandAppoverList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LogSSOId">
+      <soap12:operation soapAction="http://tempuri.org/LogSSOId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isValidSSO">
+      <soap12:operation soapAction="http://tempuri.org/isValidSSO" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ApprovalProcess">
+      <soap12:operation soapAction="http://tempuri.org/ApprovalProcess" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getITP">
+      <soap12:operation soapAction="http://tempuri.org/getITP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setITP">
+      <soap12:operation soapAction="http://tempuri.org/setITP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isCanRepeatOrder">
+      <soap12:operation soapAction="http://tempuri.org/isCanRepeatOrder" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAccountContactQuotationFromSPR">
+      <soap12:operation soapAction="http://tempuri.org/CreateAccountContactQuotationFromSPR" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotePageStrCustomer">
+      <soap12:operation soapAction="http://tempuri.org/getQuotePageStrCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getOptyIdByQuoteId">
+      <soap12:operation soapAction="http://tempuri.org/getOptyIdByQuoteId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsPTD">
+      <soap12:operation soapAction="http://tempuri.org/IsPTD" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="quoteExit">
+    <wsdl:port name="quoteExitSoap" binding="tns:quoteExitSoap">
+      <soap:address location="http://eq.advantech.com:3000/Services/QuoteExit.asmx" />
+    </wsdl:port>
+    <wsdl:port name="quoteExitSoap12" binding="tns:quoteExitSoap12">
+      <soap12:address location="http://eq.advantech.com:3000/Services/QuoteExit.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

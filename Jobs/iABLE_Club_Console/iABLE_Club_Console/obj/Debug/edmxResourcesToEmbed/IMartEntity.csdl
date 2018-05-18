@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MyAdvantechGlobalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="RewardRecord">
+    <Key>
+      <PropertyRef Name="RecordID" />
+    </Key>
+    <Property Name="RecordID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="RewardID" Type="Int32" />
+    <Property Name="ActivityID" Type="Int32" />
+    <Property Name="TransactionType" Type="Int32" />
+    <Property Name="RecordType" Type="Int32" />
+    <Property Name="OrderNo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="Point" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="TotalPoint" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="SalesEmail" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Receiver1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Zip1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Tel1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Receiver2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress2" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Zip2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Address2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Mobile2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Tel2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="ShippingTime" Type="DateTime" Precision="3" />
+    <Property Name="SendMailStatus_Internal" Type="Int32" />
+    <Property Name="SendMailStatus_Corporate" Type="Int32" />
+    <Property Name="SendMailStatus_Sales" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="MyAdvantechGlobalEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="RewardRecord" EntityType="Self.RewardRecord" />
+    <EntitySet Name="RewardItem" EntityType="MyAdvantechGlobalModel.RewardItem" />
+    <EntitySet Name="RewardUserLog" EntityType="MyAdvantechGlobalModel.RewardUserLog" />
+  </EntityContainer>
+  <EntityType Name="RewardItem">
+    <Key>
+      <PropertyRef Name="RewardID" />
+    </Key>
+    <Property Name="RewardID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ActivityID" Type="Int32" />
+    <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionShort" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DescriptionLong" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PartNo" Type="String" MaxLength="54" FixedLength="false" Unicode="true" />
+    <Property Name="Point" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ImageFile" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ExternalURL" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+    <Property Name="SendMailDate" Type="DateTime" Precision="3" />
+    <Property Name="StockQty" Type="Int32" />
+    <Property Name="Sequnece" Type="Int32" />
+    <Property Name="PublishStatus" Type="Boolean" />
+    <Property Name="Currecny" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Money" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="RewardUserLog">
+    <Key>
+      <PropertyRef Name="LogID" />
+    </Key>
+    <Property Name="LogID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserID" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="LogType" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="URL" Type="String" MaxLength="1200" FixedLength="false" Unicode="true" />
+    <Property Name="Message" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedBy" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

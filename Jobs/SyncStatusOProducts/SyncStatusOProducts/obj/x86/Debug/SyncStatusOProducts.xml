@@ -1,0 +1,563 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+SyncStatusOProducts
+</name>
+</assembly>
+<members>
+<member name="T:SyncStatusOProducts.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:SyncStatusOProducts.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:SyncStatusOProducts.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.quoteExit">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.#ctor">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isPhaseOutCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.InitApprovalFlowCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isApprovedCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isRejectedCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isInApprovedCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getLevelCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.toQuotationCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.TESTCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getQuotationListByCompanyCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getQuotationDetailByIdCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isQuoteExpiredCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getLevelandAppoverListCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.LogSSOIdCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isValidSSOCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.ApprovalProcessCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getITPCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.setITPCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.isCanRepeatOrderCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.CreateAccountContactQuotationFromSPRCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getQuotePageStrCustomerCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.getOptyIdByQuoteIdCompleted">
+<remarks/>
+</member>
+<member name="E:SyncStatusOProducts.EQWS.quoteExit.IsPTDCompleted">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isPhaseOut(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isPhaseOutAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isPhaseOutAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.InitApprovalFlow(System.String,System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.InitApprovalFlowAsync(System.String,System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.InitApprovalFlowAsync(System.String,System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isApproved(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isApprovedAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isApprovedAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isRejected(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isRejectedAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isRejectedAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isInApproved(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isInApprovedAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isInApprovedAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevel(System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevelAsync(System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevelAsync(System.String,System.String,SyncStatusOProducts.EQWS.struct_GP_Detail[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.toQuotation(System.String,System.String,System.String,System.String,System.Int32,System.String,SyncStatusOProducts.EQWS.struct_Quote_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.toQuotationAsync(System.String,System.String,System.String,System.String,System.Int32,System.String,SyncStatusOProducts.EQWS.struct_Quote_Detail[])">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.toQuotationAsync(System.String,System.String,System.String,System.String,System.Int32,System.String,SyncStatusOProducts.EQWS.struct_Quote_Detail[],System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.TEST">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.TESTAsync">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.TESTAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationListByCompany(System.String,System.Data.DataSet@)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationListByCompanyAsync(System.String,System.Data.DataSet)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationListByCompanyAsync(System.String,System.Data.DataSet,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationDetailById(System.String,System.Data.DataSet@)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationDetailByIdAsync(System.String,System.Data.DataSet)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotationDetailByIdAsync(System.String,System.Data.DataSet,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isQuoteExpired(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isQuoteExpiredAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isQuoteExpiredAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevelandAppoverList(System.String,System.String,System.Data.DataTable@)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevelandAppoverListAsync(System.String,System.String,System.Data.DataTable)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getLevelandAppoverListAsync(System.String,System.String,System.Data.DataTable,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.LogSSOId(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.LogSSOIdAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.LogSSOIdAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isValidSSO(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isValidSSOAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isValidSSOAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.ApprovalProcess(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.ApprovalProcessAsync(System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.ApprovalProcessAsync(System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getITP(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getITPAsync(System.String,System.String,System.String,System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getITPAsync(System.String,System.String,System.String,System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.setITP(System.String,System.String,System.String,System.Decimal)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.setITPAsync(System.String,System.String,System.String,System.Decimal)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.setITPAsync(System.String,System.String,System.String,System.Decimal,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isCanRepeatOrder(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isCanRepeatOrderAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.isCanRepeatOrderAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.CreateAccountContactQuotationFromSPR">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.CreateAccountContactQuotationFromSPRAsync">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.CreateAccountContactQuotationFromSPRAsync(System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotePageStrCustomer(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotePageStrCustomerAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getQuotePageStrCustomerAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getOptyIdByQuoteId(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getOptyIdByQuoteIdAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.getOptyIdByQuoteIdAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.IsPTD(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.IsPTDAsync(System.String)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.IsPTDAsync(System.String,System.Object)">
+<remarks/>
+</member>
+<member name="M:SyncStatusOProducts.EQWS.quoteExit.CancelAsync(System.Object)">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.struct_GP_Detail">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_GP_Detail.lineNo">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_GP_Detail.PartNo">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_GP_Detail.Price">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_GP_Detail.Itp">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_GP_Detail.QTY">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.struct_Quote_Detail">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.quoteId">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.lineNo">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.partNo">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.description">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.qty">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.listPrice">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.unitPrice">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.newUnitPrice">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.itp">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.newItp">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.deliveryPlant">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.category">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.classABC">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.rohs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.ewFlag">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.reqDate">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.dueDate">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.satisfyFlag">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.canBeConfirmed">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.custMaterial">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.inventory">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.oType">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.modelNo">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.struct_Quote_Detail.SPRNO">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isPhaseOutCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isPhaseOutCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isPhaseOutCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.InitApprovalFlowCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isApprovedCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isApprovedCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isApprovedCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isRejectedCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isRejectedCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isRejectedCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isInApprovedCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isInApprovedCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isInApprovedCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getLevelCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getLevelCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getLevelCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.toQuotationCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.toQuotationCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.toQuotationCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.TESTCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.TESTCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.TESTCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotationListByCompanyCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotationListByCompanyCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getQuotationListByCompanyCompletedEventArgs.ds">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotationDetailByIdCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotationDetailByIdCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getQuotationDetailByIdCompletedEventArgs.ds">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isQuoteExpiredCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isQuoteExpiredCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isQuoteExpiredCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getLevelandAppoverListCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getLevelandAppoverListCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getLevelandAppoverListCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getLevelandAppoverListCompletedEventArgs.GPLevel_and_Approver">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.LogSSOIdCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isValidSSOCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isValidSSOCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isValidSSOCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.ApprovalProcessCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getITPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getITPCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getITPCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.setITPCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isCanRepeatOrderCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.isCanRepeatOrderCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.isCanRepeatOrderCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.CreateAccountContactQuotationFromSPRCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotePageStrCustomerCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getQuotePageStrCustomerCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getQuotePageStrCustomerCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getOptyIdByQuoteIdCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.getOptyIdByQuoteIdCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.getOptyIdByQuoteIdCompletedEventArgs.Result">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.IsPTDCompletedEventHandler">
+<remarks/>
+</member>
+<member name="T:SyncStatusOProducts.EQWS.IsPTDCompletedEventArgs">
+<remarks/>
+</member>
+<member name="P:SyncStatusOProducts.EQWS.IsPTDCompletedEventArgs.Result">
+<remarks/>
+</member>
+</members>
+</doc>

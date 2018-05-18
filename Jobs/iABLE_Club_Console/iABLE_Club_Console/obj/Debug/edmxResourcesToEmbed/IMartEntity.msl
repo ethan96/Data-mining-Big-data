@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="MyAdvantechGlobalModelStoreContainer" CdmEntityContainer="MyAdvantechGlobalEntities">
+    <EntitySetMapping Name="RewardRecord">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.RewardRecord">
+        <MappingFragment StoreEntitySet="RewardRecord">
+          <ScalarProperty Name="RecordID" ColumnName="RecordID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="RewardID" ColumnName="RewardID" />
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="TransactionType" ColumnName="TransactionType" />
+          <ScalarProperty Name="RecordType" ColumnName="RecordType" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="TotalPoint" ColumnName="TotalPoint" />
+          <ScalarProperty Name="SalesEmail" ColumnName="SalesEmail" />
+          <ScalarProperty Name="Receiver1" ColumnName="Receiver1" />
+          <ScalarProperty Name="EmailAddress1" ColumnName="EmailAddress1" />
+          <ScalarProperty Name="CompanyName1" ColumnName="CompanyName1" />
+          <ScalarProperty Name="Zip1" ColumnName="Zip1" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Mobile1" ColumnName="Mobile1" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Receiver2" ColumnName="Receiver2" />
+          <ScalarProperty Name="EmailAddress2" ColumnName="EmailAddress2" />
+          <ScalarProperty Name="CompanyName2" ColumnName="CompanyName2" />
+          <ScalarProperty Name="Zip2" ColumnName="Zip2" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="Mobile2" ColumnName="Mobile2" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="ShippingTime" ColumnName="ShippingTime" />
+          <ScalarProperty Name="SendMailStatus_Internal" ColumnName="SendMailStatus_Internal" />
+          <ScalarProperty Name="SendMailStatus_Corporate" ColumnName="SendMailStatus_Corporate" />
+          <ScalarProperty Name="SendMailStatus_Sales" ColumnName="SendMailStatus_Sales" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RewardItem">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.RewardItem">
+        <MappingFragment StoreEntitySet="RewardItem">
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedBy" ColumnName="UpdatedBy" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
+          <ScalarProperty Name="Currecny" ColumnName="Currecny" />
+          <ScalarProperty Name="PublishStatus" ColumnName="PublishStatus" />
+          <ScalarProperty Name="Sequnece" ColumnName="Sequnece" />
+          <ScalarProperty Name="StockQty" ColumnName="StockQty" />
+          <ScalarProperty Name="SendMailDate" ColumnName="SendMailDate" />
+          <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="ExternalURL" ColumnName="ExternalURL" />
+          <ScalarProperty Name="ImageFile" ColumnName="ImageFile" />
+          <ScalarProperty Name="Point" ColumnName="Point" />
+          <ScalarProperty Name="PartNo" ColumnName="PartNo" />
+          <ScalarProperty Name="DescriptionLong" ColumnName="DescriptionLong" />
+          <ScalarProperty Name="DescriptionShort" ColumnName="DescriptionShort" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="ActivityID" ColumnName="ActivityID" />
+          <ScalarProperty Name="RewardID" ColumnName="RewardID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RewardUserLog">
+      <EntityTypeMapping TypeName="MyAdvantechGlobalModel.RewardUserLog">
+        <MappingFragment StoreEntitySet="RewardUserLog">
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="URL" ColumnName="URL" />
+          <ScalarProperty Name="LogType" ColumnName="LogType" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="StoreID" ColumnName="StoreID" />
+          <ScalarProperty Name="LogID" ColumnName="LogID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

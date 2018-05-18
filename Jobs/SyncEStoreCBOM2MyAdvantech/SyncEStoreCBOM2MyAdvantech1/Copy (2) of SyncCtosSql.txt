@@ -1,0 +1,61 @@
+﻿SELECT     
+
+             case  WHEN CTOSComponent.ComponentParentID IS NULL then CTOSComponent.ComponentName    + ' for ' + Product.DisplayPartno   
+              when CTOSComponent.Componenttype='list' then
+              case CTOSComponent.ComponentName when 'None' then 'None' else  isnull([dbo].f_mergComponentSProductID(CTOSComponent.ComponentID),'No Need')  end
+              else 'No Need' end as CATEGORY_ID,CTOSComponent.ComponentName   as CATEGORY_NAME,    
+
+              case when  CTOSComponent.ComponentType='list' then 'Component' else CTOSComponent.ComponentType end as CATEGORY_TYPE ,  
+
+              CASE WHEN CTOSComponent.ComponentParentID IS NULL  THEN Product.DisplayPartno ELSE CTOSComponent_1.ComponentName   + ' for ' + Product.DisplayPartno  END AS PARENT_CATEGORY_ID,  
+
+              '' as  CATALOG_ID,CTOSComponent.ComponentDesc as  CATEGORY_DESC,  
+
+              '' AS DISPLAY_NAME ,'created_by_ming' as IMAGE_ID, '' AS EXTENDED_DESC ,getdate()as CREATED, 'EZ' AS created_by, getdate()as LAST_UPDATED ,'EZ' as last_updated_by,  
+
+              CTOSBOM.Seq as SEQ_NO ,'' as publish_status, CTOSBOM.Defaults as DEFAULT_FLAG, 
+
+              CASE  
+              WHEN CTOSBOM.Defaults = 1 
+
+              THEN 'DEFAULT'
+              
+              WHEN 
+              (
+                                
+                  SELECT COUNT(*) FROM CTOSComponent as ttttt
+                  WHERE ttttt.ComponentID IN 
+                  (
+                     SELECT ComponentID FROM CTOSBOM as ccccc
+                     WHERE ccccc.SProductID = Product_Ctos.SProductID
+                     AND ccccc.StoreID = Product_Ctos.StoreID
+                  )
+                  AND ttttt.ComponentName = 'None' and ttttt.ComponentParentID = CTOSComponent.ComponentID
+              
+              ) = 0
+
+              THEN 'REQUIRED' 
+
+              ELSE ''
+
+              END as CONFIGURATION_RULE,
+              
+              '' as  NOT_EXPAND_CATEGORY,  
+
+              CTOSBOM.Show AS show_hide,'2' AS EZ_FLAG,NEWID() as  UID , SUBSTRING ( Product_Ctos.StoreID , 2 , 2 ) AS  ORG  
+
+              FROM Parts INNER JOIN  
+
+              Product ON Parts.StoreID = Product.StoreID AND Parts.SProductID = Product.SProductID INNER JOIN  
+
+              Product_Ctos ON Product.StoreID = Product_Ctos.StoreID AND Product.SProductID = Product_Ctos.SProductID INNER JOIN  
+
+              CTOSBOM ON Product_Ctos.StoreID = CTOSBOM.StoreID AND Product_Ctos.SProductID = CTOSBOM.SProductID INNER JOIN  
+
+              CTOSComponent ON CTOSBOM.ComponentID = CTOSComponent.ComponentID left JOIN  
+
+              CTOSComponent AS CTOSComponent_1 ON CTOSComponent.ComponentParentID = CTOSComponent_1.ComponentID  
+
+              WHERE     (Parts.StoreID = 'AUS' or Parts.StoreID ='AAU') AND (Product.Status <> 'INACTIVE_AUTO')   
+
+              AND (Product.[Status] not in ('PHASED_OUT','INACTIVE','INACTIVE_AUTO','DELETED')   AND Product.PublishStatus = 1 ) and (CTOSBOM.Show = 1)  
